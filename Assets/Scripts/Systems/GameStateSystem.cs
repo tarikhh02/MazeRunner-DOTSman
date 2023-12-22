@@ -24,6 +24,8 @@ public partial struct GameStateSystem : ISystem
             UIManager.Instance.Win();
             AudioManager.instance.PlayMusic("win", false);
             AudioManager.instance.isGameFinished = true;
+            if(!playerQuery.IsEmpty)
+                systemState.EntityManager.DestroyEntity(playerQuery.GetSingletonEntity());
         }
         else if(playerQuery.IsEmpty)
         {
