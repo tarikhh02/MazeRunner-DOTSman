@@ -17,7 +17,7 @@ public class LoadingScreenControll : MonoBehaviour
     {
         float2 position = new float2
         {
-            x = -(sceneLoadingOperation.progress * 1920),
+            x = -(1980 - (sceneLoadingOperation.progress * 1920)),
             y = loadingBarFill.rectTransform.anchoredPosition.y,
         };
         loadingBarFill.rectTransform.anchoredPosition = position;
